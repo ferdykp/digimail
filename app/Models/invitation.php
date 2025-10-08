@@ -10,7 +10,7 @@ class invitation extends Model
         'invitation_id',
         'name',
         'noWa',
-        'messages',
-        'is_attending'
+        'is_attending',
+        'message',
     ];
 }

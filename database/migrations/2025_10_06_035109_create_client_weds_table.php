@@ -19,15 +19,15 @@ return new class extends Migration
             $table->string('groomParents');
             $table->string('bride');
             $table->string('brideParents');
-            $table->date('wedding_date');
+            $table->date('weddingDate');
             $table->string('location');
             // $table->string('name');
             // $table->decimal('latitude', 10, 7);
             // $table->decimal('longitude', 10, 7);
-            $table->text('map_link'); // embed Google Maps
+            $table->text('mapLink'); // embed Google Maps
             $table->string('pictwed');
             $table->string('story');
-            $table->string('norek');
+            $table->integer('norek');
             // $table->enum('confirm', ['Hadir', 'Tidak Hadir']);
             // $table->string('greetingsAud');
         });

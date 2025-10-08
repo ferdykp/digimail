@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('noWa');
             $table->boolean('is_attending')->nullable(); // true = hadir, false = tidak hadir
+            $table->string('messages');
         });
     }
 

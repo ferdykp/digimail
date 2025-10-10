@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('invitations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('clientWed_id')->constrained()->onDelete('cascade');
+            $table->foreignId('clientWed_id')->constrained('client_weds')->onDelete('cascade');
             $table->string('name');
             $table->integer('noWa');
             $table->boolean('is_attending')->nullable(); // true = hadir, false = tidak hadir
-            $table->string('messages');
+            $table->string('message');
         });
     }
 

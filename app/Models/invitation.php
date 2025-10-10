@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class invitation extends Model
 {
     protected $fillable = [
-        'invitation_id',
+        'clientWed_id',
         'name',
         'noWa',
         'is_attending',

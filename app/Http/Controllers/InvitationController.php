@@ -26,5 +26,41 @@ class InvitationController extends Controller
             'is_attending' => 'required|boolean',
             'message' => 'required|string'
         ]);
+
+        ClientWed::create($validated);
+
+        return back()->with('success', 'thanks');
+    }
+
+    public function sendLink(invitation $invitation)
+    {
+        $slug = $invitation->clientWed->slug;
+        $guestName = urlencode($invitation->name);
+        $link = url("/invite/{$slug}?guest={guestName}");
+
+        $message = urlencode("Halo {$invitation->name}! \n"
+            . "Kami mengundangmu ke pernikahan kami 💍\n\n"
+            . "Lihat undangan di sini:\n{$link}");
+
+        $waNumber = preg_replace('/[^0-9]/', '', $invitation->noWa);
+        return redirect()->away("https://wa.me/{$waNumber}?text={$message}");
+    }
+
+    public function sendViaFonnte(Invitation $invitation)
+    {
+        $slug = $invitation->clientWed->slug;
+        $guestName = urlencode($invitation->name);
+        $link = url("/invite/{$slug}?guest={$guestName}");
+
+        $message = "Halo {$invitation->name}! 💐\nKami mengundangmu ke pernikahan kami 💍\nLihat undangan di sini:\n{$link}";
+
+        $response = Http::withHeaders([
+            'Authorization' => env('FONNTE_TOKEN'),
+        ])->post('https://api.fonnte.com/send', [
+            'target' => $invitation->noWa,
+            'message' => $message,
+        ]);
+
+        return $response->json();
     }
 }

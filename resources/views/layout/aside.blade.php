@@ -10,8 +10,8 @@
     </a>
 
     <nav class="mt-10 space-y-1">
-        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">
-            <i class="mr-2 fa-solid fa-gauge-high"></i> Dashboard
+        <a href="{{ route('clientWed.index') }}" class="block py-2.5 px-4 rounded hover:bg-gray-700">
+            <i class="mr-2 fa-solid fa-gauge-high"></i> Wedding
         </a>
 
         @auth

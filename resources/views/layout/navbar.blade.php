@@ -1,24 +1,22 @@
-{{-- <nav class="flex items-center justify-between px-4 py-3 m-3 bg-white border-b border-gray-200 rounded-lg shadow-sm">
-    <button id="sidebarToggle" class="text-gray-700 md:hidden">
-        <i class="text-2xl fa-solid fa-bars"></i>
-    </button>
-    <h1 class="text-xl font-semibold text-gray-700">Dashboard</h1>
-</nav> --}}
-
-<nav class="flex items-center justify-between px-6 py-3 rounded-sm shadow-sm" style="background-color: #F5DAA7">
+<nav id="mainNavbar"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 rounded-lg shadow-sm transition-all duration-500 bg-[#FFF8F0]/90 backdrop-blur-sm">
     <!-- KIRI: Logo -->
-    <div class="flex items-center p-2 space-x-2 bg-black border rounded-lg">
+    <div class="flex items-center p-2 space-x-2 border rounded-lg bg-[#FDFDFD]/90 shadow-sm transition-all duration-500">
         <img src="/logo/logo-wed-nobg.png" alt="Logo" class="w-auto h-10">
     </div>
 
     <!-- TENGAH: Menu -->
-    <div class="flex space-x-2 text-sm font-semibold text-gray-700">
-
-        {{-- Tombol Home --}}
-        <a href="{{ url('/') }}"
-            class="relative overflow-hidden rounded-lg inline-flex items-center px-5 py-2.5 text-sm font-medium transition-all duration-300
-                {{ Request::is('/') ? 'text-white bg-red-800' : 'text-blue-700 bg-white hover:bg-blue-100' }}">
+    <div class="flex space-x-2 text-sm font-semibold text-[#4A4A4A]">
+        <a href="#home"
+            class="relative overflow-hidden rounded-lg inline-flex items-center px-5 py-2.5 transition-all duration-300
+                text-[#4A4A4A] bg-[#FDFDFD]/90 hover:bg-[#F8E9DF]">
             Home
+        </a>
+
+        <a href="#clientWed"
+            class="relative overflow-hidden rounded-lg inline-flex items-center px-5 py-2.5 transition-all duration-300
+                text-[#4A4A4A] bg-[#FDFDFD]/90 hover:bg-[#F8E9DF]">
+            Invitation
         </a>
 
         {{-- Tombol Undangan Digital --}}
@@ -26,7 +24,7 @@
             <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
                 type="button"
                 class="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-lg transition-all duration-300
-                    {{ Request::is('undangan*') ? 'text-white bg-red-800 shadow-lg' : 'text-red-800 bg-white hover:bg-red-100' }}">
+                    {{ Request::is('undangan*') ? 'text-white bg-[#EEC9B7] shadow-sm' : 'text-[#4A4A4A] bg-[#FDFDFD] hover:bg-[#F8E9DF]' }}">
                 Undangan Digital
                 <svg class="w-2.5 h-2.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 10 6">
@@ -35,11 +33,11 @@
                 </svg>
             </button>
 
-            <div id="dropdownHover"
-                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                    <li><a href="{{ url('/undangan/dashboard') }}"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+            <div id="dropdownHover" class="z-10 hidden bg-[#FDFDFD] divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownHoverButton">
+                    <li>
+                        <a href="{{ route('clientWed.index') }}"
+                            class="block px-4 py-2 hover:bg-[#F8E9DF] hover:text-[#4A4A4A]">Wedding</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +47,7 @@
     <!-- KANAN: Tombol Login -->
     <div>
         <a href="{{ url('/login') }}"
-            class="px-5 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-300">
+            class="px-5 py-2.5 text-sm font-medium text-[#4A4A4A] bg-[#FDFDFD]/90 rounded-lg hover:bg-[#F8E9DF] focus:outline-none focus:ring-2 focus:ring-[#EEC9B7]">
             Login
         </a>
     </div>

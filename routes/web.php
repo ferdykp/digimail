@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-route::view('/', '/home/index');
+// route::view('/', '/home/index');
+route::view('/', 'index');
+
 Route::get('/clientWed', [ClientWedController::class, 'index'])->name('clientWed.index');
 Route::resource('clientWed', ClientWedController::class);
 

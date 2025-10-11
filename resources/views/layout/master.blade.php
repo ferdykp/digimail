@@ -18,10 +18,13 @@
         <!-- Konten utama -->
         <main class="flex-1">
             @yield('content')
+            {{-- @include('home.index')
+            @include('clientWed.index') --}}
         </main>
     </div>
 
     @include('layout.script')
 </body>
+
 
 </html>

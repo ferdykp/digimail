@@ -1,6 +1,7 @@
-@extends('layout.master')
+{{-- @extends('layout.master') --}}
 
-@section('content')
+{{-- @section('content') --}}
+<section id="clientWed">
     <div class="max-w-3xl p-8 mx-auto mt-10 bg-white shadow-md rounded-xl">
         <h2 class="mb-6 text-2xl font-bold text-center text-gray-700">Wedding Information Form</h2>
 
@@ -90,4 +91,5 @@
             </div>
         </form>
     </div>
-@endsection
+</section>
+{{-- @endsection --}}

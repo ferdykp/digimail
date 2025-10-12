@@ -47,8 +47,10 @@
     <!-- KANAN: Tombol Login -->
     <div>
         <a href="{{ url('/login') }}"
-            class="px-5 py-2.5 text-sm font-medium text-[#4A4A4A] bg-[#FDFDFD]/90 rounded-lg hover:bg-[#F8E9DF] focus:outline-none focus:ring-2 focus:ring-[#EEC9B7]">
-            Login
+            class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-[#4A4A4A] bg-[#FDFDFD]/90 rounded-lg hover:bg-[#F8E9DF] focus:outline-none focus:ring-2 focus:ring-[#EEC9B7]">
+            <i class="fa-solid fa-user text-[#4A4A4A]"></i>
+            <span>Login</span>
         </a>
     </div>
+
 </nav>

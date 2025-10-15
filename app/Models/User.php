@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function clientWeds()
+    {
+        return $this->hasMany(ClientWed::class);
+    }
 }

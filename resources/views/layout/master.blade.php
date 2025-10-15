@@ -18,13 +18,17 @@
         <!-- Konten utama -->
         <main class="flex-1">
             @yield('content')
-            {{-- @include('home.index')
-            @include('clientWed.index') --}}
+
+            {{-- Footer hanya muncul jika bukan di halaman login atau register --}}
+            @if (!request()->routeIs('login') && !request()->routeIs('register'))
+                @include('layout.footer')
+            @endif
         </main>
+
     </div>
 
     @include('layout.script')
 </body>
-
+{{-- @include('layout.footer') --}}
 
 </html>

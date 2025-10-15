@@ -3,5 +3,6 @@
     @include('home.index')
     @include('feature.index')
     @include('order.index')
-    @include('clientWed.index')
+    @include('package.index')
+    {{-- @include('clientWed.index') --}}
 @endsection

@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class clientWed extends Model
+class ClientWed extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
+        'user_id',
         'slug',
         'groom',
         'groomParents',
@@ -18,7 +22,15 @@ class clientWed extends Model
         'pictwed',
         'story',
         'norek',
-        // 'confirm',
-        // 'greetingsAud'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function invitations()
+    {
+        return $this->hasMany(Invitation::class);
+    }
 }

@@ -99,3 +99,40 @@
     <script>
         lucide.createIcons();
     </script>
+
+    {{-- Animation Transition Our Feature --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".feature-card");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Hilangkan efek awal
+                        entry.target.classList.remove("opacity-0", "translate-y-10", "scale-95",
+                            "blur-sm");
+                        // Tambahkan efek jadi terlihat
+                        entry.target.classList.add("opacity-100", "translate-y-0", "scale-100",
+                            "blur-0");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            cards.forEach((card, i) => {
+                observer.observe(card);
+                card.style.transitionDelay = `${i * 100}ms`; // jeda antar kartu
+            });
+        });
+    </script>
+
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // durasi animasi (ms)
+            once: true, // animasi hanya muncul sekali
+        });
+    </script>

@@ -17,7 +17,8 @@
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
             <!-- 1 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="zap" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Instant Invitation Generator</h3>
@@ -27,7 +28,8 @@
             </div>
 
             <!-- 2 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="palette" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Beautiful & Responsive Design</h3>
@@ -37,7 +39,8 @@
             </div>
 
             <!-- 3 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="user-check" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Personalized Guest Name</h3>
@@ -47,7 +50,8 @@
             </div>
 
             <!-- 4 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="users" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">RSVP & Guest Management</h3>
@@ -57,7 +61,8 @@
             </div>
 
             <!-- 5 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="map-pin" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Interactive Map Integration</h3>
@@ -67,7 +72,8 @@
             </div>
 
             <!-- 6 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="gift" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Digital Gift (Amplop Online)</h3>
@@ -77,7 +83,8 @@
             </div>
 
             <!-- 7 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="image" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Photo & Video Gallery</h3>
@@ -87,7 +94,8 @@
             </div>
 
             <!-- 8 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="music" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Background Music</h3>
@@ -97,7 +105,8 @@
             </div>
 
             <!-- 9 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="timer" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Countdown Timer</h3>
@@ -106,7 +115,8 @@
             </div>
 
             <!-- 10 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="book-open" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Guestbook & Wishes</h3>
@@ -116,7 +126,8 @@
             </div>
 
             <!-- 11 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="bar-chart-3" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Dashboard & Analytics</h3>
@@ -126,7 +137,8 @@
             </div>
 
             <!-- 12 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="globe" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Custom Domain & Branding</h3>
@@ -136,7 +148,8 @@
             </div>
 
             <!-- 13 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="sparkles" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">AI Text Helper</h3>
@@ -146,7 +159,8 @@
             </div>
 
             <!-- 14 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="languages" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Multi-language Support</h3>
@@ -156,7 +170,8 @@
             </div>
 
             <!-- 15 -->
-            <div class="bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition">
+            <div
+                class="feature-card opacity-0 translate-y-10 scale-95 blur-sm bg-[#EEC9B7]/60 rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-[#EEC9B7]/80 transition duration-700 ease-out">
                 <div class="flex flex-col items-center text-center">
                     <i data-lucide="layers" class="w-10 h-10 text-[#D7816A] mb-3"></i>
                     <h3 class="mb-2 text-lg font-semibold">Flexible Packages</h3>
@@ -179,3 +194,9 @@
         </div> --}}
     </div>
 </section>
+
+<style>
+    .feature-card {
+        transition-property: opacity, transform, filter;
+    }
+</style>

@@ -2,15 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class invitation extends Model
+class Invitation extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'clientWed_id',
+        'client_wed_id',
         'name',
         'noWa',
         'is_attending',
-        'message',
+        'message'
     ];
+
+    public function clientWed()
+    {
+        return $this->belongsTo(ClientWed::class);
+    }
 }

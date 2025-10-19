@@ -2,50 +2,65 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\clientWed;
-use App\Models\invitation;
+use App\Models\ClientWed;
+use App\Models\Invitation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class InvitationController extends Controller
 {
+    /**
+     * Menampilkan halaman undangan berdasarkan slug.
+     */
     public function show($slug)
     {
-        $client = clientWed::where('slug', $slug)->firstOrFail();
+        // Ambil data client berdasarkan slug
+        $client = ClientWed::where('slug', $slug)->firstOrFail();
+
+        // Ambil daftar tamu undangan yang sudah mengisi form
         $guests = $client->invitations()->latest()->get();
 
-        return view('invite.show', compact('client', 'guest'));
+        // Kirim data ke view
+        return view('guest.index', compact('client', 'guests'));
     }
 
+    /**
+     * Simpan data konfirmasi kehadiran tamu.
+     */
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'clientWed_id' => 'required|exists:clientWeds, id',
-            'name' => 'required|string',
-            'noWa' => 'required|integer|max:20',
+            'clientWed_id' => 'required|exists:clientWeds,id',
+            'name' => 'required|string|max:255',
+            'noWa' => 'required|string|max:20',
             'is_attending' => 'required|boolean',
-            'message' => 'required|string'
+            'message' => 'required|string|max:500',
         ]);
 
-        ClientWed::create($validated);
+        // Simpan ke tabel invitations, bukan clientWed
+        Invitation::create($validated);
 
-        return back()->with('success', 'thanks');
+        return back()->with('success', 'Thank you for your response!');
     }
 
-    public function sendLink(invitation $invitation)
+    /**
+     * Kirim link undangan via WhatsApp.
+     */
+    public function sendLink(Invitation $invitation)
     {
         $slug = $invitation->clientWed->slug;
         $guestName = urlencode($invitation->name);
-        $link = url("/invite/{$slug}?guest={guestName}");
+        $link = url("/invite/{$slug}?guest={$guestName}");
 
-        $message = urlencode("Halo {$invitation->name}! \n"
-            . "Kami mengundangmu ke pernikahan kami 💍\n\n"
-            . "Lihat undangan di sini:\n{$link}");
+        $message = urlencode("Halo {$invitation->name}! 💍\nKami mengundangmu ke pernikahan kami.\n\nLihat undangan di sini:\n{$link}");
 
         $waNumber = preg_replace('/[^0-9]/', '', $invitation->noWa);
         return redirect()->away("https://wa.me/{$waNumber}?text={$message}");
     }
 
+    /**
+     * Kirim undangan via API Fonnte.
+     */
     public function sendViaFonnte(Invitation $invitation)
     {
         $slug = $invitation->clientWed->slug;

@@ -38,7 +38,7 @@
 
                 @auth
                     <!-- Jika SUDAH login -->
-                    <a href="{{ url('/package') }}"
+                    <a href="{{ url('/clientWed') }}"
                         class="mt-8 inline-block bg-[#EEC9B7] hover:bg-[#E7BFA6] text-white font-semibold py-2.5 px-6 rounded-lg transition">
                         Coba Sekarang
                     </a>
@@ -76,7 +76,7 @@
 
                     @auth
                         <!-- Jika SUDAH login -->
-                        <a href="{{ url('/package') }}"
+                        <a href="{{ url('/clientWed') }}"
                             class="mt-8 inline-block bg-[#C47B59] hover:bg-[#A46649] text-white font-semibold py-2.5 px-6 rounded-lg transition">
                             Coba Sekarang
                         </a>
@@ -109,7 +109,7 @@
 
                 @auth
                     <!-- Jika SUDAH login -->
-                    <a href="{{ url('/package') }}"
+                    <a href="{{ url('/clientWed') }}"
                         class="mt-8 inline-block bg-[#EEC9B7] hover:bg-[#E7BFA6] text-white font-semibold py-2.5 px-6 rounded-lg transition">
                         Coba Sekarang
                     </a>

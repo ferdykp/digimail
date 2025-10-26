@@ -14,14 +14,18 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+    // AuthController.php
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/')->with('success', 'Selamat datang kembali!');
+            return redirect()->route('clientWed.dashboard')->with('success', 'Selamat datang kembali!');
         }
+
         return back()->withErrors(['email' => 'Email atau password salah']);
     }
+
 
     public function showRegister()
     {

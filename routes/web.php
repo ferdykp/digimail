@@ -14,7 +14,10 @@ use App\Http\Controllers\AuthController;
 Route::view('/', 'index')->name('landing');
 
 
+Route::view('/clientWed/dashboard', 'clientWed.dashboard')->name('clientWed.dashboard');
+
 Route::get('/clientWed', [ClientWedController::class, 'index'])->name('clientWed.index');
+Route::view('/clientWed/preview', 'clientWed.preview')->name('preview.wedding');
 Route::resource('clientWed', ClientWedController::class);
 
 Route::get('/invite/{slug}', [InvitationController::class, 'index'])->name('guest.index');

@@ -41,7 +41,7 @@
             <div class="w-full mt-20 md:w-2/3">
                 <h2 class="mb-8 text-3xl font-bold text-gray-800">Wedding Information Form</h2>
 
-                <form action="{{ route('clientWed.store') }}" method="POST" enctype="multipart/form-data"
+                <form id="weddingForm" action="{{ route('clientWed.store') }}" method="POST" enctype="multipart/form-data"
                     class="space-y-6">
                     @csrf
 
@@ -167,9 +167,13 @@
             </div>
 
             {{-- RIGHT SIDE --}}
-            <div
+            {{-- <div
                 class="items-center justify-center hidden w-1/3 border border-gray-200 border-dashed md:flex bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl">
                 <p class="italic text-gray-400">Wedding preview area (coming soon)</p>
+            </div> --}}
+            <div class="hidden w-1/3 md:block">
+                <iframe id="previewFrame" src="{{ route('preview.wedding') }}"
+                    class="w-full h-[85vh] border border-gray-200 rounded-xl shadow-inner bg-white"></iframe>
             </div>
         </div>
 
@@ -186,4 +190,28 @@
             }
         </style>
     </section>
+
+    {{-- Realtime update ke iframe --}}
+    @push('scripts')
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('weddingForm');
+                const iframe = document.getElementById('previewFrame');
+
+                form.addEventListener('input', () => {
+                    const data = new FormData(form);
+                    const values = Object.fromEntries(data.entries());
+                    iframe.contentWindow.postMessage(values, '*');
+                });
+
+                // Untuk file (gambar prewedding)
+                form.addEventListener('change', (event) => {
+                    const data = new FormData(form);
+                    const values = Object.fromEntries(data.entries());
+                    values.pictwed = form.pictwed.files[0]; // kirim file-nya
+                    iframe.contentWindow.postMessage(values, '*');
+                });
+            });
+        </script>
+    @endpush
 @endsection

@@ -6,25 +6,39 @@
     @stack('head')
 </head>
 
-<body class="flex min-h-screen font-serif bg-gray-100">
+{{-- <body class="flex min-h-screen font-serif bg-gray-100"> --}}
+
+<body class="flex h-screen overflow-hidden">
     <!-- Sidebar di kiri -->
-    @if (request()->routeIs('clientWed.dashboard'))
+    @if (request()->routeIs('clientWed.dashboard') || request()->routeIs('clientWed.index'))
         @include('layout.aside')
     @endif
+
 
     <!-- Bagian kanan (navbar + konten) -->
     <div class="flex flex-col flex-1 min-h-screen transition-all duration-300 ">
         <!-- Navbar -->
-        @if (!request()->routeIs('login') && !request()->routeIs('register') && !request()->routeIs('clientWed.dashboard'))
+        @if (request()->routeIs('clientWed.dashboard') || request()->routeIs('clientWed.index'))
+            @include('layout.headNavbar')
+        @endif
+        @if (
+            !request()->routeIs('login') &&
+                !request()->routeIs('register') &&
+                !request()->routeIs('clientWed.dashboard') &&
+                !request()->routeIs('clientWed.index'))
             @include('layout.navbar')
         @endif
 
         <!-- Konten utama -->
-        <main class="flex-1">
+        <main class="flex-1 h-full overflow-y-auto">
             @yield('content')
 
             {{-- Footer hanya muncul jika bukan di halaman login atau register --}}
-            @if (!request()->routeIs('login') && !request()->routeIs('register') && !request()->routeIs('clientWed.dashboard'))
+            @if (
+                !request()->routeIs('login') &&
+                    !request()->routeIs('register') &&
+                    !request()->routeIs('clientWed.dashboard') &&
+                    !request()->routeIs('clientWed.index'))
                 @include('layout.footer')
             @endif
         </main>

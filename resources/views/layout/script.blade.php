@@ -136,3 +136,39 @@
             once: true, // animasi hanya muncul sekali
         });
     </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            const iframe = document.getElementById('previewFrame');
+
+            if (!form || !iframe) return;
+
+            const sendData = () => {
+                const formData = new FormData(form);
+
+                // Ambil data session sebelumnya dari blade
+                const sessionData = @json(session('wedding') ?? []);
+
+                // Gabungkan semua data
+                const values = {
+                    ...(sessionData.step1 ?? {}),
+                    ...(sessionData.step2 ?? {}),
+                    ...(sessionData.step3 ?? {}),
+                };
+
+                for (let [key, value] of formData.entries()) {
+                    values[key] = value;
+                }
+
+                iframe.contentWindow.postMessage(values, '*');
+            };
+
+            form.addEventListener('input', sendData);
+            form.addEventListener('change', sendData);
+
+            // kirim data awal saat load
+            setTimeout(sendData, 500);
+        });
+    </script>
